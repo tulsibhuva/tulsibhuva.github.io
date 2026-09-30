@@ -1,0 +1,32 @@
+:root{
+  --s-0:0; /* @kind spacing */
+  --s-1:2px;
+  --s-2:4px;
+  --s-3:6px;
+  --s-4:8px;
+  --s-5:12px;
+  --s-6:16px;
+  --s-7:20px;
+  --s-8:24px;
+  --s-9:32px;
+  --s-10:40px;
+  --s-11:56px;
+  --s-12:72px;
+  --s-13:96px;
+  --s-14:128px;
+  --s-15:160px;
+
+  --radius-0:0;
+  --radius-1:2px;
+  --radius-2:4px;
+  --radius-3:6px;
+  --radius-4:8px;
+  --radius-5:12px;
+  --radius-6:16px;
+  --radius-full:9999px;
+
+  --border-w:1px; /* @kind spacing */
+
+  --container:1200px; /* @kind spacing */
+  --container-narrow:880px; /* @kind spacing */
+}

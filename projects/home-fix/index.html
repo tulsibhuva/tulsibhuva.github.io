@@ -1,0 +1,159 @@
+<!doctype html><html><head><meta charset="utf-8"><title>EverHaus Remodeling — Tulsi Bhuva</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const NS = window.TPortfolioDesignSystem_31bff0;
+const { Nav, Button, Badge } = NS;
+function App() {
+  const [navVis, setNavVis] = React.useState(true);
+  const lastY = React.useRef(0);
+  React.useEffect(() => {
+    const onScroll = () => { const y = window.scrollY; setNavVis(y < 80 || y < lastY.current); lastY.current = y; };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  return (
+    <div style={{minHeight:'100vh',background:'var(--bg)',color:'var(--text)'}}>
+      <div style={{position:'fixed',top:0,left:0,right:0,zIndex:9999,padding:'20px 32px',pointerEvents:'none',transform:navVis?'translateY(0)':'translateY(-120%)',transition:'transform .35s ease'}}>
+        <div style={{maxWidth:1200,margin:'0 auto',pointerEvents:'auto'}}>
+          <Nav brand={<img src="../../logo.png" alt="Logo" style={{width:58,height:57,borderRadius:'50%',objectFit:'cover'}} />} links={[{label:'← Back',href:'../../index.html'}]} cta={<Button variant="accent" size="sm" onClick={()=>{const f=document.getElementById('contact'); if(f) window.scrollTo({top:f.getBoundingClientRect().top+window.scrollY-40,behavior:'smooth'});}} style={{height:44,width:136,justifyContent:'center',fontSize:16}}>Let's talk</Button>} />
+        </div>
+      </div>
+      <header style={{maxWidth:1200,margin:'140px auto 0',padding:'0 32px'}}>
+        <div style={{display:'flex',gap:12,marginBottom:24}}>
+          <Badge tone="outline">UI/UX</Badge>
+          <Badge tone="outline">Web Design</Badge>
+        </div>
+        <h1 style={{fontSize:'clamp(48px,7vw,96px)',fontWeight:500,letterSpacing:'-.035em',lineHeight:1,margin:'0 0 16px'}}>EverHaus Remodeling</h1>
+        <p style={{fontSize:20,color:'var(--text-muted)',maxWidth:'60ch',margin:'0 0 48px',lineHeight:1.5}}>Home Renovation Service · Home Page · 2025</p>
+        <div style={{aspectRatio:'16/9',borderRadius:'var(--radius-5)',overflow:'hidden',border:'1px solid var(--border)'}}>
+          <img src="./thumb.png" alt="EverHaus Remodeling hero" style={{width:'100%',height:'100%',objectFit:'cover'}} />
+        </div>
+      </header>
+      <section style={{maxWidth:1200,margin:'80px auto',padding:'0 32px'}}>
+        <h2 style={{fontSize:32,fontWeight:500,letterSpacing:'-.02em',marginBottom:24}}>Project Overview</h2>
+        <p style={{fontSize:18,lineHeight:1.7,color:'var(--text-muted)',marginBottom:32}}>EverHaus Remodeling is a self-initiated concept project I designed to sharpen my skills at building trust-driven service websites. It's a homepage for a premium home renovation company that handles kitchen, bathroom, and whole-home remodeling.</p>
+        <p style={{fontSize:18,lineHeight:1.7,color:'var(--text-muted)',marginBottom:48}}>Home renovation is a high-cost, high-anxiety decision. People are inviting strangers into their home, spending a lot of money, and worrying whether the final result will actually match what they imagined. So I designed the page around one core UX goal: turn a nervous visitor into someone who feels confident enough to request a quote.</p>
+      </section>
+      <section style={{maxWidth:1200,margin:'0 auto 80px',padding:'0 32px'}}>
+        <h2 style={{fontSize:32,fontWeight:500,letterSpacing:'-.02em',marginBottom:24}}>Bit of Market Research</h2>
+        <p style={{fontSize:18,lineHeight:1.7,color:'var(--text-muted)',marginBottom:32}}>Before designing, I thought about how people actually shop for renovation services. A few things shaped my decisions:</p>
+        <p style={{fontSize:18,lineHeight:1.7,color:'var(--text-muted)',marginBottom:32}}>Renovation is an emotional and expensive purchase, so most people research for weeks and compare several companies before contacting anyone. That means the homepage has to build trust fast, or the visitor just leaves and checks a competitor.</p>
+        <p style={{fontSize:18,lineHeight:1.7,color:'var(--text-muted)',marginBottom:32}}>People also struggle to imagine the final result. They don't just want to read "we do remodeling" - they want to see real finished spaces. That's why visual proof and project galleries matter so much in this space.</p>
+        <p style={{fontSize:18,lineHeight:1.7,color:'var(--text-muted)',marginBottom:32}}>And a big fear in this industry is getting stuck with a messy, delayed, or overpriced job. So buyers look for signals of reliability - reviews, experience, clear process, and real project photos - before they ever fill a form.</p>
+        <p style={{fontSize:18,lineHeight:1.7,color:'var(--text-muted)',marginBottom:48}}>These three insights (trust, visual proof, and fear of a bad experience) became the backbone of the whole layout.</p>
+      </section>
+      <section style={{maxWidth:1200,margin:'0 auto 80px',padding:'0 32px'}}>
+        <h2 style={{fontSize:32,fontWeight:500,letterSpacing:'-.02em',marginBottom:48}}>Design Challenges I Solved</h2>
+        <div style={{display:'flex',flexDirection:'column',gap:36}}>
+          {[
+            ['Making an expensive, scary decision feel safe.','The biggest challenge wasn\'t visual — it was emotional. A renovation costs a lot and feels risky. I had to design a page that lowers that fear step by step, so I placed the review rating right in the hero, followed it with trust icons, and kept reinforcing credibility with stats, testimonials, and real project galleries as the user scrolls.'],
+            ['Showing "we do everything" without overwhelming people.','EverHaus offers many services, and cramming them all in usually creates clutter. I solved this by narrowing the homepage down to three clear service cards (Kitchen, Bathroom, Whole Home) instead of listing every little offering, so visitors instantly understand the scope without feeling lost.'],
+            ['Helping people picture their own home.','Renovation buyers can\'t imagine results from text alone. The challenge was to make the page feel visual and aspirational without turning into a random photo dump. I used curated interior sections and a dedicated projects gallery so the images act as proof and inspiration, not just decoration.'],
+            ['Balancing "premium" with "warm and approachable."','A luxury look can feel cold and unaffordable, while a friendly look can feel cheap. I had to hit the middle. The soft cream background, natural tones, and elegant serif headings make it feel high-end, while the warm clay accent and human testimonials keep it welcoming.'],
+            ['Guiding a long page toward one action.','There\'s a lot of content on a homepage like this, and it\'s easy for the visitor to scroll, enjoy it, and leave without doing anything. I kept the "Request a Quote" action repeating at natural decision points, so whenever someone feels convinced, the next step is right there.'],
+          ].map(([title, desc], i) => (
+            <div key={i} style={{display:'grid',gridTemplateColumns:'48px 1fr',gap:20,paddingBottom:36,borderBottom:i<4?'1px solid var(--border)':'none'}}>
+              <div style={{fontSize:28,fontWeight:600,fontFamily:'var(--font-mono)',color:'#C9A19B',lineHeight:1}}>{'0'+(i+1)}</div>
+              <div>
+                <h3 style={{fontSize:18,fontWeight:600,letterSpacing:'-.01em',margin:'0 0 10px',color:'#C9A19B'}}>{title}</h3>
+                <p style={{fontSize:16,lineHeight:1.7,color:'var(--text-muted)',margin:0}}>{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section style={{maxWidth:1200,margin:'0 auto 80px',padding:'0 32px'}}>
+        <h2 style={{fontSize:32,fontWeight:500,letterSpacing:'-.02em',marginBottom:48}}>UX Problems Solved</h2>
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'40px 48px'}}>
+          {[
+            ['<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A19B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>','Trust Shown Before Anything Else','I placed the star rating and review count right in the hero, so the very first thing a nervous visitor sees is proof that other people trusted this company and were happy.'],
+            ['<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A19B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>','Instant Clarity on What They Do','The three simple service cards (Kitchen, Bathroom, Whole Home) let visitors understand the company\'s offering in seconds, without reading long paragraphs or getting confused.'],
+            ['<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A19B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>','Proof Through Real Projects','The interior and "Finest Renovation Projects" galleries let people actually see finished work, which answers their biggest question - "Can they really deliver what I want?"'],
+            ['<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A19B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>','Numbers That Build Confidence','The stats section (10+ years, 100+ projects, 30+ team members) gives quick, scannable proof of experience, so visitors feel they\'re dealing with an established company, not a risky one.'],
+            ['<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A19B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>','Real Voices Reduce Doubt','The testimonial row with names and star ratings adds human proof at the exact point where people start comparing options and looking for reassurance.'],
+            ['<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A19B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>','Questions Answered Before They\'re Asked','The FAQ section handles common worries - timelines, licensing, warranty, payment - right on the homepage, so doubts get cleared without the visitor having to email or leave.'],
+            ['<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A19B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>','A Calm, Low-Pressure Path to Contact','Instead of aggressive pop-ups, I used a soft "Request a Quote" action repeated at the right moments, making the first step feel easy and pressure-free.'],
+            ['<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A19B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><circle cx="12" cy="10" r="3"/></svg>','A Layout That Feels Relaxing, Not Rushed','Lots of white space, natural colors, and a clean flow keep the experience calm - which matters because a stressed visitor making a big decision needs to feel at ease, not overwhelmed.'],
+          ].map(([icon, title, desc], i) => (
+            <div key={i} style={{background:'rgba(201,161,155,.06)',borderRadius:16,padding:'28px 24px',border:'1px solid rgba(201,161,155,.12)'}}>
+              <div style={{marginBottom:14}} dangerouslySetInnerHTML={{__html:icon}}></div>
+              <h3 style={{fontSize:17,fontWeight:600,letterSpacing:'-.01em',margin:'0 0 10px',color:'#C9A19B'}}>{title}</h3>
+              <p style={{fontSize:15,lineHeight:1.7,color:'var(--text-muted)',margin:0}}>{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section style={{maxWidth:1200,margin:'0 auto 80px',padding:'0 32px'}}>
+        <h2 style={{fontSize:32,fontWeight:500,letterSpacing:'-.02em',marginBottom:32}}>Final Design</h2>
+        <div style={{borderRadius:'var(--radius-5)',overflow:'hidden',border:'1px solid var(--border)'}}>
+          <img src="./final-design.png" alt="EverHaus Remodeling final design" style={{width:'100%',display:'block'}} />
+        </div>
+      </section>
+      <div style={{textAlign:'center',padding:'60px 32px 0'}}>
+        {(()=>{
+          const [h, setH] = React.useState(false);
+          return <a href="../../index.html#work" onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{display:'inline-flex',alignItems:'center',gap:10,padding:'14px 36px',borderRadius:999,background:h?'#fff':'var(--accent)',color:h?'#895B8A':'var(--ink-0)',textDecoration:'none',fontSize:18,fontFamily:'var(--font-sans)',fontWeight:500,transition:'all .2s ease',transform:h?'scale(1.04)':'scale(1)',boxShadow:h?'0 0 20px rgba(137,91,138,.4)':'none',border:h?'1px solid rgba(255,255,255,.35)':'1px solid transparent'}}>Explore More Work →</a>;
+        })()}
+      </div>
+
+      {/* FOOTER */}
+      <footer id="contact" style={{padding:'120px 32px 80px',maxWidth:1200,margin:'0 auto'}}>
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:80,alignItems:'start'}}>
+          <div>
+            <img src="../../logo.png" alt="Tulsi Bhuva" style={{width:58,height:57,borderRadius:'50%',objectFit:'cover',marginBottom:24}} />
+            <div style={{fontSize:22,fontWeight:500,letterSpacing:'-.02em',lineHeight:1.4,marginBottom:16}}>Hi. 3 years in, 40+ things shipped. I don't chase trends. I don't design for Dribbble. I don't ship what I wouldn't click on myself.</div>
+            <div style={{display:'flex',flexDirection:'column',gap:8,color:'var(--text-muted)',marginBottom:20,maxWidth:'52ch',lineHeight:1.6}}><div>Drop me a note with the role, the company, and what the team is building - I'll reply within a day.</div><div>Open to full-time, contract, or freelance. Remote-first, based in Ahmedabad (IST).</div></div>
+            <div style={{display:'flex',flexDirection:'column',gap:12,marginBottom:32}}>
+              <a href="tel:+919328881801" style={{display:'inline-flex',alignItems:'center',gap:10,textDecoration:'none',color:'var(--text-muted)',fontSize:15}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#895B8A"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                +91 9328881801
+              </a>
+              <a href="mailto:tulsibhuva4040@gmail.com" style={{display:'inline-flex',alignItems:'center',gap:10,textDecoration:'none',color:'var(--text-muted)',fontSize:15}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#895B8A"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                tulsibhuva4040@gmail.com
+              </a>
+              <div style={{display:'inline-flex',alignItems:'center',gap:10,color:'var(--text-muted)',fontSize:15}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#895B8A"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Ahmedabad, India
+              </div>
+            </div>
+            <a href="https://wa.me/919328881801?text=We%20are%20contacting%20you%20through%20your%20portfolio" target="_blank" rel="noopener"><Button variant="accent" size="lg" iconLeft={<svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>}>Let's Talk</Button></a>
+          </div>
+          <div style={{display:'flex',flexDirection:'column',gap:16,paddingTop:8}}>
+            {[
+              ['LinkedIn','https://www.linkedin.com/in/tulsi-bhuva-0212ab23a/'],
+              ['Behance','https://www.behance.net/tulsiibhuva'],
+              ['Dribbble','https://dribbble.com/TulsiBhuva'],
+              ['Instagram','https://www.instagram.com/_tulsi_bhuva/'],
+            ].map(([label,href],i)=>{
+              const [h, setH] = React.useState(false);
+              return (
+              <a key={i} href={href} target="_blank" rel="noopener" onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'20px 0',borderBottom:'1px solid var(--border)',textDecoration:'none',color:h?'#C185C3':'var(--text)',fontSize:18,fontWeight:500,transition:'color .2s ease, padding-left .2s ease',paddingLeft:h?8:0}}>
+                {label} <span style={{color:h?'#C185C3':'var(--text-dim)',fontSize:14,transition:'color .2s ease, transform .2s ease',transform:h?'translateX(4px)':'none',display:'inline-block'}}>→</span>
+              </a>
+            );})}
+          </div>
+        </div>
+        <div style={{marginTop:80,paddingTop:24,borderTop:'1px solid var(--border)',display:'flex',justifyContent:'space-between',alignItems:'center',color:'var(--text-dim)',fontSize:13,fontFamily:'var(--font-mono)'}}>
+          <div>Designed & built by Tulsi Bhuva</div>
+          <div style={{display:'flex',alignItems:'center',gap:24}}>
+            <div>© 2026</div>
+            <div onClick={()=>window.scrollTo({top:0,behavior:'smooth'})} style={{width:40,height:40,borderRadius:999,border:'1px solid var(--border)',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',transition:'all .2s ease'}} onMouseEnter={e=>{e.currentTarget.style.background='#895B8A';e.currentTarget.style.borderColor='#895B8A'}} onMouseLeave={e=>{e.currentTarget.style.background='transparent';e.currentTarget.style.borderColor='var(--border)'}}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body></html>

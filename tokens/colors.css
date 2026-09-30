@@ -1,0 +1,42 @@
+/* TPortfolio color tokens — dark-first, warm neutrals, single accent */
+:root{
+  /* Base neutrals (warm) */
+  --ink-0:#0a0a0a;
+  --ink-1:#111111;
+  --ink-2:#181818;
+  --ink-3:#222222;
+  --ink-4:#2e2e2e;
+  --ink-5:#3a3a3a;
+  --ink-6:#5a5a5a;
+  --ink-7:#8a8a8a;
+  --ink-8:#b6b3ad;
+  --ink-9:#d9d5cc;
+  --paper:#f2eee5;
+  --paper-1:#e8e3d7;
+
+  /* Accent — warm signal */
+  --accent:#895B8A;
+  --accent-hover:#FDEFF2;
+  --accent-press:#895B8A;
+
+  /* Semantic — dark theme */
+  --bg:var(--ink-0);
+  --bg-elevated:var(--ink-1);
+  --bg-sunken:#050505;
+  --surface:var(--ink-2);
+  --surface-hover:var(--ink-3);
+  --surface-press:var(--ink-4);
+  --border:var(--ink-4);
+  --border-strong:var(--ink-5);
+  --text:var(--paper);
+  --text-muted:var(--ink-8);
+  --text-dim:var(--ink-7);
+  --text-faint:var(--ink-6);
+  --text-inverse:var(--ink-0);
+  --focus:var(--accent);
+
+  /* Signal */
+  --success:#4ade80;
+  --warning:#facc15;
+  --danger:#ef4444;
+}

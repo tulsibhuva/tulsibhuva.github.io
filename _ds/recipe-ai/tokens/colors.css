@@ -1,0 +1,48 @@
+/* Recipe AI — Color tokens
+   The brand is deliberately monochrome: warm near-black ink on warm off-white,
+   with color coming from 3D food stickers and a small pastel "nutrient" palette. */
+:root{
+  /* Warm neutral ink ramp */
+  --ink-900:#181818;   /* primary text, black buttons */
+  --ink-700:#3a3a38;
+  --ink-600:#5c5c58;
+  --ink-500:#8a8a85;   /* secondary text */
+  --ink-400:#a7a7a1;   /* muted text, second-line headings */
+  --ink-300:#c9c9c3;   /* placeholder */
+  --ink-200:#e4e4df;   /* borders */
+  --ink-100:#eeeeea;   /* subtle dividers / fills */
+
+  /* Warm surfaces */
+  --surface-0:#ffffff;  /* cards */
+  --surface-1:#fafaf8;  /* device screen / app background */
+  --surface-2:#f3f3f0;  /* input fields, resting chips */
+  --canvas:#e9e9e6;     /* backdrop behind device frames */
+
+  /* Pastel semantic "nutrient" palette */
+  --protein-bg:#e5efd4;  --protein-fg:#586f2c;
+  --fat-bg:#fbe1dc;      --fat-fg:#b0604a;
+  --carb-bg:#d9edf0;     --carb-fg:#3c7883;
+
+  /* Accents */
+  --star:#f4b400;        /* rating gold */
+
+  /* ---- Semantic aliases ---- */
+  --text-strong:var(--ink-900);
+  --text-body:var(--ink-700);
+  --text-muted:var(--ink-400);
+  --text-placeholder:var(--ink-300);
+  --text-on-dark:#ffffff;
+
+  --surface-card:var(--surface-0);
+  --surface-app:var(--surface-1);
+  --surface-field:var(--surface-2);
+
+  --border-subtle:var(--ink-200);
+  --divider:var(--ink-100);
+
+  --action-primary:var(--ink-900);
+  --action-primary-hover:#000000;
+  --action-primary-text:#ffffff;
+
+  --focus-ring:rgba(24,24,24,.35);
+}

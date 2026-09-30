@@ -1,0 +1,38 @@
+/* Geist Sans + Geist Mono via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
+:root{
+  --font-sans:'Geist','Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'Geist Mono',ui-monospace,'SF Mono','JetBrains Mono',monospace;
+  --font-display:var(--font-sans);
+
+  /* Type scale — editorial, big display */
+  --fs-xs:11px;
+  --fs-sm:13px;
+  --fs-body:15px;
+  --fs-md:17px;
+  --fs-lg:20px;
+  --fs-xl:24px;
+  --fs-2xl:32px;
+  --fs-3xl:44px;
+  --fs-4xl:64px;
+  --fs-5xl:96px;
+  --fs-6xl:128px;
+
+  --lh-tight:1.02; /* @kind other */
+  --lh-snug:1.15; /* @kind other */
+  --lh-normal:1.4; /* @kind other */
+  --lh-relaxed:1.55; /* @kind other */
+
+  --tracking-tight:-0.03em; /* @kind other */
+  --tracking-snug:-0.015em; /* @kind other */
+  --tracking-normal:0; /* @kind other */
+  --tracking-wide:0.04em; /* @kind other */
+  --tracking-caps:0.12em; /* @kind other */
+
+  --fw-light:300; /* @kind other */
+  --fw-regular:400; /* @kind other */
+  --fw-medium:500; /* @kind other */
+  --fw-semibold:600; /* @kind other */
+  --fw-bold:700; /* @kind other */
+}

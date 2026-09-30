@@ -1,0 +1,5 @@
+/* Recipe AI — Webfonts.
+   SUBSTITUTION: the original product font files were not provided. "Hanken Grotesk"
+   is loaded from Google Fonts as the nearest match (friendly geometric grotesque with
+   a full weight range). Replace with the real font files when available. */
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap");

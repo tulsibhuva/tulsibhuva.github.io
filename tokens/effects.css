@@ -1,0 +1,15 @@
+:root{
+  --shadow-sm:0 1px 0 rgba(0,0,0,.4);
+  --shadow-md:0 4px 20px rgba(0,0,0,.35);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.5);
+  --shadow-inset:inset 0 1px 0 rgba(255,255,255,.04);
+
+  --ease-out:cubic-bezier(.2,.7,.2,1); /* @kind other */
+  --ease-in-out:cubic-bezier(.6,0,.2,1); /* @kind other */
+  --dur-fast:120ms; /* @kind other */
+  --dur-med:220ms; /* @kind other */
+  --dur-slow:420ms; /* @kind other */
+
+  --hairline:1px solid var(--border); /* @kind other */
+  --hairline-strong:1px solid var(--border-strong); /* @kind other */
+}
