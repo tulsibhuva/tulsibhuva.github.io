@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Furniture Customisation App - Tulsi Bhuva</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="description" content="Furniture Customisation App - Ecommerce Mobile App - 2024. UI/UX case study by Tulsi Bhuva."><link rel="icon" type="image/png" href="../../favicon.png"><title>Furniture Customisation App - Tulsi Bhuva</title>
 <link rel="stylesheet" href="../../styles.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../../responsive.css">
@@ -13,7 +13,7 @@
 <div id="root"></div>
 <script type="text/babel" data-presets="react">
 const NS = window.TPortfolioDesignSystem_31bff0;
-const { Nav, Button, Badge } = NS;
+const { Nav, Button, Badge, ScrollTopButton } = NS;
 function App() {
   const [navVis, setNavVis] = React.useState(true);
   const lastY = React.useRef(0);
@@ -54,7 +54,7 @@ function App() {
       <div style={{textAlign:'center',padding:'60px 32px 0'}}>
         {(()=>{
           const [h, setH] = React.useState(false);
-          return <a href="../../index.html#work" onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{display:'inline-flex',alignItems:'center',gap:10,padding:'14px 36px',borderRadius:999,background:h?'#fff':'var(--accent)',color:h?'#895B8A':'var(--ink-0)',textDecoration:'none',fontSize:18,fontFamily:'var(--font-sans)',fontWeight:500,transition:'all .2s ease',transform:h?'scale(1.04)':'scale(1)',boxShadow:h?'0 0 20px rgba(137,91,138,.4)':'none',border:h?'1px solid rgba(255,255,255,.35)':'1px solid transparent'}}>Explore More Work →</a>;
+          return <a href="../../index.html#work" onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{display:'inline-flex',alignItems:'center',gap:10,padding:'14px 36px',borderRadius:999,background:h?'#fff':'var(--accent)',color:h?'var(--accent)':'var(--ink-0)',textDecoration:'none',fontSize:18,fontFamily:'var(--font-sans)',fontWeight:500,transition:'all .2s ease',transform:h?'scale(1.04)':'scale(1)',boxShadow:h?'0 0 20px rgba(137,91,138,.4)':'none',border:h?'1px solid rgba(255,255,255,.35)':'1px solid transparent'}}>Explore More Work →</a>;
         })()}
       </div>
 
@@ -67,11 +67,11 @@ function App() {
             <div style={{display:'flex',flexDirection:'column',gap:8,color:'var(--text-muted)',marginBottom:20,maxWidth:'52ch',lineHeight:1.6}}><div>Drop me a note with the role, the company, and what the team is building - I'll reply within a day.</div><div>Open to full-time, contract, or freelance. Remote-first, based in Ahmedabad (IST).</div></div>
             <div style={{display:'flex',flexDirection:'column',gap:12,marginBottom:32}}>
               <a href="mailto:tulsibhuva4040@gmail.com" style={{display:'inline-flex',alignItems:'center',gap:10,textDecoration:'none',color:'var(--text-muted)',fontSize:15}}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#895B8A"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 tulsibhuva4040@gmail.com
               </a>
               <div style={{display:'inline-flex',alignItems:'center',gap:10,color:'var(--text-muted)',fontSize:15}}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#895B8A"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 Ahmedabad, India
               </div>
             </div>
@@ -86,8 +86,8 @@ function App() {
             ].map(([label,href],i)=>{
               const [h, setH] = React.useState(false);
               return (
-              <a key={i} href={href} target="_blank" rel="noopener" onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'20px 0',borderBottom:'1px solid var(--border)',textDecoration:'none',color:h?'#C185C3':'var(--text)',fontSize:18,fontWeight:500,transition:'color .2s ease, padding-left .2s ease',paddingLeft:h?8:0}}>
-                {label} <span style={{color:h?'#C185C3':'var(--text-dim)',fontSize:14,transition:'color .2s ease, transform .2s ease',transform:h?'translateX(4px)':'none',display:'inline-block'}}>→</span>
+              <a key={i} href={href} target="_blank" rel="noopener" onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'20px 0',borderBottom:'1px solid var(--border)',textDecoration:'none',color:h?'var(--accent-light)':'var(--text)',fontSize:18,fontWeight:500,transition:'color .2s ease, padding-left .2s ease',paddingLeft:h?8:0}}>
+                {label} <span style={{color:h?'var(--accent-light)':'var(--text-dim)',fontSize:14,transition:'color .2s ease, transform .2s ease',transform:h?'translateX(4px)':'none',display:'inline-block'}}>→</span>
               </a>
             );})}
           </div>
@@ -96,9 +96,7 @@ function App() {
           <div>Designed & built by Tulsi Bhuva</div>
           <div style={{display:'flex',alignItems:'center',gap:24}}>
             <div>© 2026</div>
-            <div onClick={()=>window.scrollTo({top:0,behavior:'smooth'})} style={{width:40,height:40,borderRadius:999,border:'1px solid var(--border)',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',transition:'all .2s ease'}} onMouseEnter={e=>{e.currentTarget.style.background='#895B8A';e.currentTarget.style.borderColor='#895B8A'}} onMouseLeave={e=>{e.currentTarget.style.background='transparent';e.currentTarget.style.borderColor='var(--border)'}}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-            </div>
+            <ScrollTopButton />
           </div>
         </div>
       </footer>

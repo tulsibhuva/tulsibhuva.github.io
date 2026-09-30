@@ -20,5 +20,6 @@ Drag this whole folder onto https://app.netlify.com/drop - it goes live in secon
 - `index.html` - homepage
 - `projects/<name>/index.html` - case-study pages
 - `styles.css` + `tokens/` - design tokens and global CSS
+- `responsive.css` + `responsive.js` - mobile menu and small-screen layout, loaded by every page
 - `_ds_bundle.js`, `_ds/` - component code the pages load
 - images live next to the page that uses them
