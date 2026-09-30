@@ -6,7 +6,7 @@
   --font-mono:'Geist Mono',ui-monospace,'SF Mono','JetBrains Mono',monospace;
   --font-display:var(--font-sans);
 
-  /* Type scale — editorial, big display */
+  /* Type scale - editorial, big display */
   --fs-xs:11px;
   --fs-sm:13px;
   --fs-body:15px;

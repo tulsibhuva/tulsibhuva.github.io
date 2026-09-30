@@ -1,4 +1,4 @@
-/* TPortfolio color tokens — dark-first, warm neutrals, single accent */
+/* TPortfolio color tokens - dark-first, warm neutrals, single accent */
 :root{
   /* Base neutrals (warm) */
   --ink-0:#0a0a0a;
@@ -14,12 +14,12 @@
   --paper:#f2eee5;
   --paper-1:#e8e3d7;
 
-  /* Accent — warm signal */
+  /* Accent - warm signal */
   --accent:#895B8A;
   --accent-hover:#FDEFF2;
   --accent-press:#895B8A;
 
-  /* Semantic — dark theme */
+  /* Semantic - dark theme */
   --bg:var(--ink-0);
   --bg-elevated:var(--ink-1);
   --bg-sunken:#050505;

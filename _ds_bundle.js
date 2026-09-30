@@ -801,8 +801,10 @@ function ProjectCard({
   }, tag && /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
-      top: 14,
-      left: 14
+      top: 16,
+      left: '50%',
+      transform: 'translateX(-50%) scale(1.3)',
+      transformOrigin: 'top center'
     }
   }, /*#__PURE__*/React.createElement(__ds_scope.Badge, {
     tone: "outline"
@@ -887,7 +889,7 @@ try { (() => {
 // TweakSelect past ~16/~10 chars per label); reach for TweakSelect directly when
 // options are many or long. For color tweaks always curate 3-4 options rather than
 // a free picker; an option can also be a whole 2–5 color palette (the stored value
-// is the array). The Tweak* controls are a floor, not a ceiling — build custom
+// is the array). The Tweak* controls are a floor, not a ceiling - build custom
 // controls inside the panel if a tweak calls for UI they don't cover.
 /* END USAGE */
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1023,7 +1025,7 @@ function useTweaks(defaults) {
       edits
     }, '*');
     // Same-window signal so in-page listeners (deck-stage rail thumbnails)
-    // can react — the parent message only reaches the host, not peers.
+    // can react - the parent message only reaches the host, not peers.
     window.dispatchEvent(new CustomEvent('tweakchange', {
       detail: edits
     }));
@@ -1033,7 +1035,7 @@ function useTweaks(defaults) {
 
 // ── TweaksPanel ─────────────────────────────────────────────────────────────
 // Floating shell. Registers the protocol listener BEFORE announcing
-// availability — if the announce ran first, the host's activate could land
+// availability - if the announce ran first, the host's activate could land
 // before our handler exists and the toolbar toggle would silently no-op.
 // The close button posts __edit_mode_dismissed so the host's toolbar toggle
 // flips off in lockstep; the host echoes __deactivate_edit_mode back which
@@ -1114,9 +1116,9 @@ function TweaksPanel({
     window.addEventListener('mouseup', up);
   };
 
-  // data-om-starter: inert presence marker — Claude Design's starter-usage
+  // data-om-starter: inert presence marker - Claude Design's starter-usage
   // probe reads it. The closed panel renders nothing, so the marker rides
-  // the <html> element as an attribute instead of a rendered node — zero
+  // the <html> element as an attribute instead of a rendered node - zero
   // elements added, so page CSS (even structural selectors like
   // :nth-child) can never observe it. It records that the page WIRES a
   // tweaks panel, whether or not the panel is open. Keep this effect.
@@ -1222,13 +1224,13 @@ function TweakRadio({
   const trackRef = React.useRef(null);
   const [dragging, setDragging] = React.useState(false);
   // The active value is read by pointer-move handlers attached for the lifetime
-  // of a drag — ref it so a stale closure doesn't fire onChange for every move.
+  // of a drag - ref it so a stale closure doesn't fire onChange for every move.
   const valueRef = React.useRef(value);
   valueRef.current = value;
 
   // Segments wrap mid-word once per-segment width runs out. The track is
   // ~248px (280 panel − 28 body pad − 4 seg pad), each button loses 12px
-  // to its own padding, and 11.5px system-ui averages ~6.3px/char — so 2
+  // to its own padding, and 11.5px system-ui averages ~6.3px/char - so 2
   // options fit ~16 chars each, 3 fit ~10. Past that (or >3 options), fall
   // back to a dropdown rather than wrap.
   const labelLen = o => String(typeof o === 'object' ? o.label : o).length;
@@ -1238,7 +1240,7 @@ function TweakRadio({
     3: 10
   }[options.length] ?? 0);
   if (!fitsAsSegments) {
-    // <select> emits strings — map back to the original option value so the
+    // <select> emits strings - map back to the original option value so the
     // fallback stays type-preserving (numbers, booleans) like the segment path.
     const resolve = s => {
       const m = options.find(o => String(typeof o === 'object' ? o.value : o) === s);
@@ -1392,7 +1394,7 @@ function TweakNumber({
   }, unit));
 }
 
-// Relative-luminance contrast pick — checkmarks drawn over a swatch need to
+// Relative-luminance contrast pick - checkmarks drawn over a swatch need to
 // read on both #111 and #fafafa without per-option configuration. Hex input
 // only (#rgb / #rrggbb); named or rgb()/hsl() colors fall through to "light".
 function __twkIsLight(hex) {
@@ -1419,8 +1421,8 @@ const __TwkCheck = ({
   stroke: light ? 'rgba(0,0,0,.78)' : '#fff'
 }));
 
-// TweakColor — curated color/palette picker. Each option is either a single
-// hex string or an array of 1-5 hex strings; the card adapts — a lone color
+// TweakColor - curated color/palette picker. Each option is either a single
+// hex string or an array of 1-5 hex strings; the card adapts - a lone color
 // renders solid, a palette renders colors[0] as the hero (left ~2/3) with the
 // rest stacked in a sharp column on the right. onChange emits the
 // option in the shape it was passed (string stays string, array stays array).
@@ -1513,7 +1515,7 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const items = [{
   company: 'Lumina Platforms',
-  period: '2025 — Now',
+  period: '2025 - Now',
   roles: ['Founding Product Designer'],
   projects: ['WIP · To be announced'],
   scope: ['Vision', 'Strategy', 'UX Research', 'UI', 'Prototyping'],
@@ -1521,15 +1523,15 @@ const items = [{
   link: '#'
 }, {
   company: 'Feedly',
-  period: '2024 — 2025',
+  period: '2024 - 2025',
   roles: ['Staff Product Designer'],
-  projects: ['AI Team — WIP'],
+  projects: ['AI Team - WIP'],
   scope: ['Vision', 'UX Research', 'UI', 'Prototyping', 'Design Systems'],
   team: 'AI · 4 members',
   link: '#'
 }, {
   company: 'Miro',
-  period: '2021 — 2024',
+  period: '2021 - 2024',
   roles: ['Staff Product Designer', 'Senior Product Designer'],
   projects: ['Spaces', 'Around by Miro Labs', 'Video Integrations'],
   scope: ['Vision', 'Strategy', 'UX Research', 'UI', 'Prototyping', 'Design Systems'],
@@ -1545,7 +1547,7 @@ const items = [{
   link: '#'
 }, {
   company: 'Netguru',
-  period: '2019 — 2021',
+  period: '2019 - 2021',
   roles: ['Senior Product Designer', 'Interim PM', 'Product Designer'],
   projects: ['OLX Price Indicator', 'UBS Financial'],
   scope: ['UX Research', 'UI', 'Prototyping', 'PM'],
@@ -1850,7 +1852,7 @@ const faqs = [{
 }, {
   category: 'Offer',
   question: 'What types of designs can you realize?',
-  answer: 'Apps for web, desktop, mobile. Landing pages, documentation, promotional material. Not branding — I collaborate with brand designers.'
+  answer: 'Apps for web, desktop, mobile. Landing pages, documentation, promotional material. Not branding - I collaborate with brand designers.'
 }, {
   category: 'Offer',
   question: 'What makes you different from others?',
@@ -1858,7 +1860,7 @@ const faqs = [{
 }, {
   category: 'Collaboration',
   question: 'What are your typical design turnaround times?',
-  answer: 'Specs within the first week — biased toward fastest product validation.'
+  answer: 'Specs within the first week - biased toward fastest product validation.'
 }, {
   category: 'Collaboration',
   question: 'How does your process look?',
@@ -1866,7 +1868,7 @@ const faqs = [{
 }, {
   category: 'Payments',
   question: 'Can I pause our project?',
-  answer: 'Yes — pause or cancel anytime. Resume later subject to availability.'
+  answer: 'Yes - pause or cancel anytime. Resume later subject to availability.'
 }];
 const socials = [{
   platform: 'Linkedin',
@@ -2139,7 +2141,7 @@ try { (() => {
 // TweakSelect past ~16/~10 chars per label); reach for TweakSelect directly when
 // options are many or long. For color tweaks always curate 3-4 options rather than
 // a free picker; an option can also be a whole 2–5 color palette (the stored value
-// is the array). The Tweak* controls are a floor, not a ceiling — build custom
+// is the array). The Tweak* controls are a floor, not a ceiling - build custom
 // controls inside the panel if a tweak calls for UI they don't cover.
 /* END USAGE */
 // ─────────────────────────────────────────────────────────────────────────────
@@ -2275,7 +2277,7 @@ function useTweaks(defaults) {
       edits
     }, '*');
     // Same-window signal so in-page listeners (deck-stage rail thumbnails)
-    // can react — the parent message only reaches the host, not peers.
+    // can react - the parent message only reaches the host, not peers.
     window.dispatchEvent(new CustomEvent('tweakchange', {
       detail: edits
     }));
@@ -2285,7 +2287,7 @@ function useTweaks(defaults) {
 
 // ── TweaksPanel ─────────────────────────────────────────────────────────────
 // Floating shell. Registers the protocol listener BEFORE announcing
-// availability — if the announce ran first, the host's activate could land
+// availability - if the announce ran first, the host's activate could land
 // before our handler exists and the toolbar toggle would silently no-op.
 // The close button posts __edit_mode_dismissed so the host's toolbar toggle
 // flips off in lockstep; the host echoes __deactivate_edit_mode back which
@@ -2366,9 +2368,9 @@ function TweaksPanel({
     window.addEventListener('mouseup', up);
   };
 
-  // data-om-starter: inert presence marker — Claude Design's starter-usage
+  // data-om-starter: inert presence marker - Claude Design's starter-usage
   // probe reads it. The closed panel renders nothing, so the marker rides
-  // the <html> element as an attribute instead of a rendered node — zero
+  // the <html> element as an attribute instead of a rendered node - zero
   // elements added, so page CSS (even structural selectors like
   // :nth-child) can never observe it. It records that the page WIRES a
   // tweaks panel, whether or not the panel is open. Keep this effect.
@@ -2474,13 +2476,13 @@ function TweakRadio({
   const trackRef = React.useRef(null);
   const [dragging, setDragging] = React.useState(false);
   // The active value is read by pointer-move handlers attached for the lifetime
-  // of a drag — ref it so a stale closure doesn't fire onChange for every move.
+  // of a drag - ref it so a stale closure doesn't fire onChange for every move.
   const valueRef = React.useRef(value);
   valueRef.current = value;
 
   // Segments wrap mid-word once per-segment width runs out. The track is
   // ~248px (280 panel − 28 body pad − 4 seg pad), each button loses 12px
-  // to its own padding, and 11.5px system-ui averages ~6.3px/char — so 2
+  // to its own padding, and 11.5px system-ui averages ~6.3px/char - so 2
   // options fit ~16 chars each, 3 fit ~10. Past that (or >3 options), fall
   // back to a dropdown rather than wrap.
   const labelLen = o => String(typeof o === 'object' ? o.label : o).length;
@@ -2490,7 +2492,7 @@ function TweakRadio({
     3: 10
   }[options.length] ?? 0);
   if (!fitsAsSegments) {
-    // <select> emits strings — map back to the original option value so the
+    // <select> emits strings - map back to the original option value so the
     // fallback stays type-preserving (numbers, booleans) like the segment path.
     const resolve = s => {
       const m = options.find(o => String(typeof o === 'object' ? o.value : o) === s);
@@ -2644,7 +2646,7 @@ function TweakNumber({
   }, unit));
 }
 
-// Relative-luminance contrast pick — checkmarks drawn over a swatch need to
+// Relative-luminance contrast pick - checkmarks drawn over a swatch need to
 // read on both #111 and #fafafa without per-option configuration. Hex input
 // only (#rgb / #rrggbb); named or rgb()/hsl() colors fall through to "light".
 function __twkIsLight(hex) {
@@ -2671,8 +2673,8 @@ const __TwkCheck = ({
   stroke: light ? 'rgba(0,0,0,.78)' : '#fff'
 }));
 
-// TweakColor — curated color/palette picker. Each option is either a single
-// hex string or an array of 1-5 hex strings; the card adapts — a lone color
+// TweakColor - curated color/palette picker. Each option is either a single
+// hex string or an array of 1-5 hex strings; the card adapts - a lone color
 // renders solid, a palette renders colors[0] as the hero (left ~2/3) with the
 // rest stacked in a sharp column on the right. onChange emits the
 // option in the shape it was passed (string stays string, array stays array).
